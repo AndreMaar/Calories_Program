@@ -244,6 +244,8 @@ public class RegistrationScript : MonoBehaviour
         newAccount = new AccountClass(_nameInput, _hightInput, _veightInput, _dateInput, _sex, _activity);
         newAccount.ShowIndex();
 
+        SceneManager.LoadScene(1);
+
         var finish_logs = new string[6];
         finish_logs[0] = _nameInput;
         finish_logs[1] = Convert.ToString(_hightInput);
@@ -254,6 +256,6 @@ public class RegistrationScript : MonoBehaviour
 
         File.AppendAllLines(textDocumentName, finish_logs);
 
-        SceneManager.LoadScene(1);
+        //SceneManager.LoadScene(1);
     }
 }
