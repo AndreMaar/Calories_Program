@@ -6,7 +6,7 @@ public class AllFood : MonoBehaviour
 {
     public static List<FoodClass> foods;
 
-    public void Start()
+    public void Awake()
     {
         foods = new List<FoodClass>();
         foods.Add(new FoodClass("Artichokes", 45));

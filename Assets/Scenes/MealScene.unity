@@ -296,9 +296,9 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: RegistrationScript, Assembly-CSharp
-        m_MethodName: HightChecker
+      - m_Target: {fileID: 1912460381}
+        m_TargetAssemblyTypeName: FoodSystem, Assembly-CSharp
+        m_MethodName: SearchFood
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -770,6 +770,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1912460382}
+  - component: {fileID: 1912460383}
   - component: {fileID: 1912460381}
   m_Layer: 0
   m_Name: Manager
@@ -790,6 +791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd961a72bf41349d2b8bdb2f0e791ed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FoodInputField: {fileID: 813254614}
 --- !u!4 &1912460382
 Transform:
   m_ObjectHideFlags: 0
@@ -804,3 +806,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1912460383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912460380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 726ef09e75e1c45309b3695a64870d7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
