@@ -5,22 +5,62 @@ using UnityEngine.UI;
 
 public class FoodSystem : MonoBehaviour
 {
-    public static List<FoodClass> Food;
-    public GameObject FoodInputField;
+    public List<FoodClass> Food;
+    static public FoodClass foodElement;
+    public InputField FoodInputField;
+    public GameObject FoodAddingPanel;
+    public GameObject FoodAddingPanelText;
+    public InputField GramsInputField;
+
+    public Transform scrollViewContent;
+    public GameObject prefab;
 
     private string Input;
+    private bool CanGoNext;
+    private int grams;
 
+    static public MeatClass newMeat;
+
+    private void Start()
+    {
+        newMeat = new MeatClass();
+    }
     public void SearchFood()
     {
         Food = new List<FoodClass>(AllFood.foods);
-        Input = FoodInputField.GetComponent<Text>().text;
+        Input = FoodInputField.text;
         foreach (FoodClass food in Food)
         {
-            if (food.name == Input)
+            if (food.GetName() == Input)
             {
-                Debug.Log("Find" + food.name);
+                foodElement = food;
+                
+                ShowAddingPanel();             
             }
         }
-        Debug.Log("ok" + Input);
+        FoodInputField.Select();
+        FoodInputField.text = "";
     }
+
+    public void ShowAddingPanel()
+    {
+        FoodAddingPanel.gameObject.SetActive(true);
+        FoodAddingPanelText.GetComponent<Text>().text = foodElement.GetName() + "\nis " + foodElement.GetCalories()*100 + " kkal in 100gr";
+    }
+    public void SetFoodGrams()
+    {
+        //Має буть перевірка на правильність вводу грамів страви
+        CanGoNext = int.TryParse(GramsInputField.text, out grams);
+        foodElement.SetGrams(grams);
+
+        newMeat.AddElementOfFood(foodElement);
+
+        Instantiate(prefab, scrollViewContent);
+
+        GramsInputField.Select();
+        GramsInputField.text = "";
+
+        FoodAddingPanel.gameObject.SetActive(false);
+    }
+
 }
