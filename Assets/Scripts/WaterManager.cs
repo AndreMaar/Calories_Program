@@ -14,7 +14,7 @@ public class WaterManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-     
+        water = RegistrationScript.newAccount.GetWater();
     }
 
     // Update is called once per frame

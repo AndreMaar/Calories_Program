@@ -23,7 +23,24 @@ public class FoodSystem : MonoBehaviour
 
     private void Start()
     {
-        newMeat = new MeatClass();
+
+        if(newMeat == null)
+        {
+            newMeat = new MeatClass();
+        }
+        else
+        {
+            for(int i = 0; i < newMeat.GetFoodList().Count;i++)
+            {
+                foodElement = newMeat.GetFoodList()[i];
+                Debug.Log(foodElement.GetName() + i);
+                
+                GameObject prefabInstance = Instantiate(prefab, scrollViewContent) as GameObject;
+                var myScriptReference = prefabInstance.GetComponent<ScrollViewItem>();
+                myScriptReference.SetText(foodElement);
+            }
+            
+        }
     }
     public void SearchFood()
     {
@@ -55,7 +72,9 @@ public class FoodSystem : MonoBehaviour
 
         newMeat.AddElementOfFood(foodElement);
 
-        Instantiate(prefab, scrollViewContent);
+        GameObject prefabInstance = Instantiate(prefab, scrollViewContent) as GameObject;
+        var myScriptReference = prefabInstance.GetComponent<ScrollViewItem>();
+        myScriptReference.SetText(foodElement);
 
         GramsInputField.Select();
         GramsInputField.text = "";

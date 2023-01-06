@@ -870,7 +870,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 859916187}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.99962324
+  m_Size: 0.9944274
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1625,7 +1625,6 @@ GameObject:
   - component: {fileID: 1832033740}
   - component: {fileID: 1832033742}
   - component: {fileID: 1832033741}
-  - component: {fileID: 1832033743}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -1649,7 +1648,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 115}
+  m_AnchoredPosition: {x: 0, y: 114.99995}
   m_SizeDelta: {x: 240, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1832033741
@@ -1692,20 +1691,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &1832033743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1832033739}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6181c83c789e40cf8e32e99c8221145, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollViewContent: {fileID: 1832033740}
-  prefab: {fileID: 1207793399117912834, guid: 6e7614abd33bd4556a082c86c115a3c0, type: 3}
 --- !u!1 &1882681883
 GameObject:
   m_ObjectHideFlags: 0

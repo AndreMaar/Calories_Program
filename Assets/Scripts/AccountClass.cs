@@ -90,6 +90,11 @@ public class AccountClass
         Debug.Log("Вода" + water);
     }
 
+    public int GetWater()
+    {
+        return water;
+    }
+
     public int Property
     {
         set { currentDayCalories = value; }     
