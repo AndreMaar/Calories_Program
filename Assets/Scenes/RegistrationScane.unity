@@ -309,7 +309,7 @@ MonoBehaviour:
   NextButton: {fileID: 799059367}
   NextButtonText: {fileID: 1232342725}
   BackButton: {fileID: 2130286082}
-  ErrorText: {fileID: 0}
+  ErrorText: {fileID: 2110131555}
   registrationObjects:
   - {fileID: 1074351740}
   - {fileID: 421489428}
@@ -2889,7 +2889,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1074351741
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4675,12 +4675,12 @@ GameObject:
   - component: {fileID: 2110131558}
   - component: {fileID: 2110131557}
   m_Layer: 5
-  m_Name: Text
+  m_Name: ErrorText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2110131556
 RectTransform:
   m_ObjectHideFlags: 0

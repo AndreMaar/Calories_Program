@@ -19,20 +19,20 @@ public class RegistrationScript : MonoBehaviour
     private string _nameInput = "NoName";
     bool CanGoNext = true;
 
-    public GameObject DateInputField;
-    public GameObject HightInputField;
-    public GameObject VeightInputField;
-    public GameObject NameInputField;
-    public GameObject NextButton;
-    public GameObject NextButtonText;
-    public GameObject BackButton;
-    public GameObject ErrorText;
+    [SerializeField] private GameObject DateInputField;
+    [SerializeField] private GameObject HightInputField;
+    [SerializeField] private GameObject VeightInputField;
+    [SerializeField] private GameObject NameInputField;
+    [SerializeField] private GameObject NextButton;
+    [SerializeField] private GameObject NextButtonText;
+    [SerializeField] private GameObject BackButton;
+    [SerializeField] private GameObject ErrorText;
 
 
-    public GameObject[] registrationObjects;
+    [SerializeField] private GameObject[] registrationObjects;
 
-    public ToggleGroup SexToggleGroup;
-    public ToggleGroup ActivityToggleGroup;
+    [SerializeField] private ToggleGroup SexToggleGroup;
+    [SerializeField] private ToggleGroup ActivityToggleGroup;
 
     public static  AccountClass newAccount;
     AccountClass.Sex _sex = AccountClass.Sex.Men;

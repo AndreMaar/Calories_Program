@@ -8,12 +8,12 @@ public class FoodSystem : MonoBehaviour
 {
     public List<FoodClass> Food;
     static public FoodClass foodElement;
-    public InputField FoodInputField;
-    public GameObject FoodAddingPanel;
-    public GameObject FoodAddingPanelText;
-    public InputField GramsInputField;
+    [SerializeField] private InputField FoodInputField;
+    [SerializeField] private GameObject FoodAddingPanel;
+    [SerializeField] private GameObject FoodAddingPanelText;
+    [SerializeField] private InputField GramsInputField;
 
-    public Transform scrollViewContent;
+    [SerializeField] private Transform scrollViewContent;
     public GameObject prefab;
 
     private string Input;
@@ -27,7 +27,8 @@ public class FoodSystem : MonoBehaviour
 
     private void Start()
     {
-        CurrentScene = SceneManager.GetActiveScene().buildIndex - 2;
+        if(SceneManager.GetActiveScene().buildIndex - 2>=0 && SceneManager.GetActiveScene().buildIndex - 2 <= 2)
+            CurrentScene = SceneManager.GetActiveScene().buildIndex - 2;
         if(meat[CurrentScene] == null)
         {
             meat[CurrentScene] = new MeatClass();

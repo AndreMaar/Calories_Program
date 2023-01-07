@@ -7,11 +7,11 @@ using System.Linq;
 
 public class CaloriesBar : MonoBehaviour
 {
-    public Slider slider;
+    [SerializeField] private Slider slider;
     private int max = (int)RegistrationScript.newAccount.index;
 
-    public GameObject neededCaloriesTextObject;
-    public GameObject currentCaloriesTextObject;
+    [SerializeField] private GameObject neededCaloriesTextObject;
+    [SerializeField] private GameObject currentCaloriesTextObject;
 
     static public MeatClass newMeat;
     private int allKcalOfMeats;

@@ -23,7 +23,7 @@ public class AllFood : MonoBehaviour
         foods.Add(new FoodClass("Pickled cucumbers", 0.08f));
         foods.Add(new FoodClass("Pepper", 0.19f));
         foods.Add(new FoodClass("Parsley", 0.23f));
-        foods.Add(new FoodClass("Tomatoes", 0.15f));
+        foods.Add(new FoodClass("Tomatoe", 0.15f));
         foods.Add(new FoodClass("Radish", 0.25f));
         foods.Add(new FoodClass("Salad", 0.15f));
         foods.Add(new FoodClass("Beet", 0.44f));
@@ -54,12 +54,12 @@ public class AllFood : MonoBehaviour
         foods.Add(new FoodClass("Lemon", 0.30f));
         foods.Add(new FoodClass("Raspberry", 0.45f));
         foods.Add(new FoodClass("Tangerine", 0.41f));
-        foods.Add(new FoodClass("Peaches", 0.45f));
-        foods.Add(new FoodClass("Plums", 0.44f));
+        foods.Add(new FoodClass("Peache", 0.45f));
+        foods.Add(new FoodClass("Plum", 0.44f));
         foods.Add(new FoodClass("Currant", 0.43f));
         foods.Add(new FoodClass("Merry", 0.53f));
         foods.Add(new FoodClass("Bilberry", 0.44f));
-        foods.Add(new FoodClass("Apples", 0.45f));
+        foods.Add(new FoodClass("Apple", 0.45f));
         foods.Add(new FoodClass("Seed", 5.80f));
         foods.Add(new FoodClass("Walnuts Volosky", 6.50f));
         foods.Add(new FoodClass("Cedar nuts", 6.20f));

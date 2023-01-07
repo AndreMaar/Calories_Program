@@ -12,15 +12,15 @@ public class GreetingScript : MonoBehaviour
     {
         if (DateTime.Now.Hour >= 4 && DateTime.Now.Hour < 12) 
         {
-            greatingTextObject.GetComponent<Text>().text = "Good Morning";
+            greatingTextObject.GetComponent<Text>().text = "Good Morning, " + RegistrationScript.newAccount.GetSetName;
         }
         else if(DateTime.Now.Hour >= 12 && DateTime.Now.Hour < 18)
         {
-            greatingTextObject.GetComponent<Text>().text = "Good Afternoon";
+            greatingTextObject.GetComponent<Text>().text = "Good Afternoon, " + RegistrationScript.newAccount.GetSetName;
         }
         else
         {
-            greatingTextObject.GetComponent<Text>().text = "Good Evening";
+            greatingTextObject.GetComponent<Text>().text = "Good Evening, " + RegistrationScript.newAccount.GetSetName;
         }
     }
 }

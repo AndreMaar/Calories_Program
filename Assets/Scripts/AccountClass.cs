@@ -8,32 +8,15 @@ using System.Runtime;
 
 public class AccountClass
 {
-    public AccountClass(string nickname, int hei, int vei, DateTime birthDate, Sex _sex, Activity activity)
+    public AccountClass(string nickname, int height, int veight, DateTime birthDate, Sex _sex, Activity activity)
     {
         this.nickname = nickname;
-        height = hei;
-        veight = vei;
+        this.height = height;
+        this.veight = veight;
         this.birthDate = birthDate;
         this._sex = _sex;
 
-        switch (activity)
-        {
-            case Activity.Minimum:
-                this.activity = 1.2f;
-                break;
-            case Activity.Low:
-                this.activity = 1.375f;
-                break;
-            case Activity.Medium:
-                this.activity = 1.55f;
-                break;
-            case Activity.High:
-                this.activity = 1.725f;
-                break;
-            case Activity.VeryHigh:
-                this.activity = 1.9f;
-                break;
-        }
+        SetActivity(activity);
 
         index = Calculation();
     }
@@ -87,7 +70,6 @@ public class AccountClass
     public void SetWater(int waterValue)
     {
         water = waterValue;
-        Debug.Log("Вода" + water);
     }
 
     public int GetWater()
@@ -99,6 +81,46 @@ public class AccountClass
     {
         set { currentDayCalories = value; }     
         get { return currentDayCalories; }
+    }
+
+    public string GetSetName
+    {
+        set { nickname = value; }
+        get { return nickname; }
+    }
+
+    public void SetSex(Sex sex)
+    {
+        _sex = sex;
+    }
+    public void SetActivity(Activity activity)
+    {
+        switch (activity)
+        {
+            case Activity.Minimum:
+                this.activity = 1.2f;
+                break;
+            case Activity.Low:
+                this.activity = 1.375f;
+                break;
+            case Activity.Medium:
+                this.activity = 1.55f;
+                break;
+            case Activity.High:
+                this.activity = 1.725f;
+                break;
+            case Activity.VeryHigh:
+                this.activity = 1.9f;
+                break;
+        }
+    }
+    public float GetActivity()
+    {
+        return activity;
+    }
+    public Sex GetSex()
+    {
+        return _sex;
     }
 }
 
