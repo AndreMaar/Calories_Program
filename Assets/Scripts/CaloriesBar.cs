@@ -13,22 +13,31 @@ public class CaloriesBar : MonoBehaviour
 
     public GameObject neededCaloriesTextObject;
     public GameObject currentCaloriesTextObject;
-    // Start is called before the first frame update
+
+    static public MeatClass newMeat;
+
     void Start()
     {
         slider.maxValue = (float)RegistrationScript.newAccount.index;
         slider.value = (float)RegistrationScript.newAccount.Property;
 
-        currentCaloriesTextObject.GetComponent<Text>().text = x.ToString();
+        
         neededCaloriesTextObject.GetComponent<Text>().text = max.ToString();
+
+        if (FoodSystem.newMeat != null)
+        {
+            newMeat = FoodSystem.newMeat;
+            RegistrationScript.newAccount.Property = newMeat.GetTotalKcalOfMeat();
+            currentCaloriesTextObject.GetComponent<Text>().text = RegistrationScript.newAccount.Property.ToString();
+            slider.value = RegistrationScript.newAccount.Property;
+
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        RegistrationScript.newAccount.Property = x;
-        slider.value = (float)RegistrationScript.newAccount.Property;
+        //RegistrationScript.newAccount.Property = x;
+        //slider.value = (float)RegistrationScript.newAccount.Property;
 
-        //Потім перенести заповнення полоски в Start()
     }
 }

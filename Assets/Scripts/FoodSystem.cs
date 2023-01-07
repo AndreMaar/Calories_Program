@@ -16,7 +16,7 @@ public class FoodSystem : MonoBehaviour
     public GameObject prefab;
 
     private string Input;
-    private bool CanGoNext;
+   private bool CanGoNext; 
     private int grams;
 
     static public MeatClass newMeat;
@@ -33,7 +33,6 @@ public class FoodSystem : MonoBehaviour
             for(int i = 0; i < newMeat.GetFoodList().Count;i++)
             {
                 foodElement = newMeat.GetFoodList()[i];
-                Debug.Log(foodElement.GetName() + i);
                 
                 GameObject prefabInstance = Instantiate(prefab, scrollViewContent) as GameObject;
                 var myScriptReference = prefabInstance.GetComponent<ScrollViewItem>();
@@ -62,24 +61,24 @@ public class FoodSystem : MonoBehaviour
     public void ShowAddingPanel()
     {
         FoodAddingPanel.gameObject.SetActive(true);
-        FoodAddingPanelText.GetComponent<Text>().text = foodElement.GetName() + "\nis " + foodElement.GetCalories()*100 + " kkal in 100gr";
+        FoodAddingPanelText.GetComponent<Text>().text = foodElement.GetName() + "\nis " + foodElement.GetCalories()*100 + " kcal in 100gr";
     }
     public void SetFoodGrams()
     {
-        //Має буть перевірка на правильність вводу грамів страви
-        CanGoNext = int.TryParse(GramsInputField.text, out grams);
-        foodElement.SetGrams(grams);
+        if (CanGoNext = int.TryParse(GramsInputField.text, out grams))
+        {
+            foodElement.SetGrams(grams);
 
-        newMeat.AddElementOfFood(foodElement);
+            newMeat.AddElementOfFood(foodElement);
 
-        GameObject prefabInstance = Instantiate(prefab, scrollViewContent) as GameObject;
-        var myScriptReference = prefabInstance.GetComponent<ScrollViewItem>();
-        myScriptReference.SetText(foodElement);
+            GameObject prefabInstance = Instantiate(prefab, scrollViewContent) as GameObject;
+            var myScriptReference = prefabInstance.GetComponent<ScrollViewItem>();
+            myScriptReference.SetText(foodElement);
 
-        GramsInputField.Select();
-        GramsInputField.text = "";
+            GramsInputField.Select();
+            GramsInputField.text = "";
 
-        FoodAddingPanel.gameObject.SetActive(false);
+            FoodAddingPanel.gameObject.SetActive(false);
+        }
     }
-
 }

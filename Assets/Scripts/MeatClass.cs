@@ -9,11 +9,6 @@ public class MeatClass
     public void AddElementOfFood(FoodClass food)
     {
         FoodOfMeal.Add(food);
-        for(int i = 0; i < FoodOfMeal.Count; i++)
-        {
-            //Debug.Log(FoodOfMeal[i].GetName());
-        }
-        //Debug.Log(FoodOfMeal[0].GetName()+" Calories="+ FoodOfMeal[0].GetCalories() + " Grams=" + FoodOfMeal[0].GetGrams() + " TotalCalories=" + FoodOfMeal[0].GetTotalCalories());
     }
     public void RemoveElementOfFood(FoodClass removebleFood)
     {
@@ -22,5 +17,14 @@ public class MeatClass
     public List<FoodClass> GetFoodList()
     {
         return FoodOfMeal;
+    }
+    public int GetTotalKcalOfMeat()
+    {
+        int TotalKcalOfMeat = 0;
+        for (int i = 0; i < FoodOfMeal.Count; i++)
+        {
+            TotalKcalOfMeat += (int)FoodOfMeal[i].GetTotalCalories();
+        }
+        return TotalKcalOfMeat;
     }
 }
