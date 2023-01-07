@@ -26,6 +26,8 @@ public class RegistrationScript : MonoBehaviour
     public GameObject NextButton;
     public GameObject NextButtonText;
     public GameObject BackButton;
+    public GameObject ErrorText;
+
 
     public GameObject[] registrationObjects;
 
@@ -64,26 +66,44 @@ public class RegistrationScript : MonoBehaviour
 
     public void DateChecker() //Функція перевірки та запису дати народження   
     {
-        CanGoNext = DateTime.TryParse(DateInputField.GetComponent<Text>().text , out _dateInput);  
+        CanGoNext = DateTime.TryParse(DateInputField.GetComponent<Text>().text , out _dateInput);
 
-        if (CanGoNext == true && _dateInput.Year > (DateTime.Now.Year - 12) && _dateInput.Year < (DateTime.Now.Year - 100))
+        if (CanGoNext == true && (_dateInput.Year > (DateTime.Now.Year - 12) || _dateInput.Year < (DateTime.Now.Year - 100)))
+        {
             CanGoNext = false;
+        }
+
+        if (CanGoNext == true)
+            ErrorText.gameObject.SetActive(false);
+        else
+            ErrorText.gameObject.SetActive(true);
+
     }
 
     public void HightChecker()
     {
         CanGoNext = int.TryParse(HightInputField.GetComponent<Text>().text, out _hightInput);
 
-        if(_hightInput < 120 || _hightInput > 220)
+        if (_hightInput < 120 || _hightInput > 220){
             CanGoNext = false;
+            ErrorText.gameObject.SetActive(true);
+        }
+        else
+            ErrorText.gameObject.SetActive(false);
+
+
     }
 
     public void VeightChecker()
     {
         CanGoNext = int.TryParse(VeightInputField.GetComponent<Text>().text, out _veightInput);
 
-        if (_veightInput < 45 || _veightInput > 200)
+        if (_veightInput < 45 || _veightInput > 200){
             CanGoNext = false;
+            ErrorText.gameObject.SetActive(true);
+        }
+        else
+            ErrorText.gameObject.SetActive(false);
     }
 
     public void SexChecker()
@@ -149,7 +169,12 @@ public class RegistrationScript : MonoBehaviour
         _nameInput = NameInputField.GetComponent<Text>().text;
 
         if (_nameInput.Length > 3 && _nameInput.Length < 15)
+        {
             CanGoNext = true;
+            ErrorText.gameObject.SetActive(false);
+        }
+        else
+            ErrorText.gameObject.SetActive(true);
     }
 
     public void CheckImputs()
@@ -206,6 +231,9 @@ public class RegistrationScript : MonoBehaviour
         {
             registrationObjects[i].gameObject.SetActive(false);
         }
+        
+        ErrorText.gameObject.SetActive(false);
+
         switch (_pageNumber)
         {
             case 0:                
