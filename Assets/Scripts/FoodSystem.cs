@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class FoodSystem : MonoBehaviour
 {
@@ -16,23 +17,26 @@ public class FoodSystem : MonoBehaviour
     public GameObject prefab;
 
     private string Input;
-   private bool CanGoNext; 
     private int grams;
 
-    static public MeatClass newMeat;
+    static public int CurrentScene;
+    static private MeatClass breakfast;
+    static private MeatClass lunch;
+    static private MeatClass dinner;
+    static public MeatClass[] meat = { breakfast, lunch, dinner};
 
     private void Start()
     {
-
-        if(newMeat == null)
+        CurrentScene = SceneManager.GetActiveScene().buildIndex - 2;
+        if(meat[CurrentScene] == null)
         {
-            newMeat = new MeatClass();
+            meat[CurrentScene] = new MeatClass();
         }
         else
         {
-            for(int i = 0; i < newMeat.GetFoodList().Count;i++)
+            for(int i = 0; i < meat[CurrentScene].GetFoodList().Count;i++)
             {
-                foodElement = newMeat.GetFoodList()[i];
+                foodElement = meat[CurrentScene].GetFoodList()[i];
                 
                 GameObject prefabInstance = Instantiate(prefab, scrollViewContent) as GameObject;
                 var myScriptReference = prefabInstance.GetComponent<ScrollViewItem>();
@@ -65,11 +69,11 @@ public class FoodSystem : MonoBehaviour
     }
     public void SetFoodGrams()
     {
-        if (CanGoNext = int.TryParse(GramsInputField.text, out grams))
+        if (int.TryParse(GramsInputField.text, out grams))
         {
             foodElement.SetGrams(grams);
 
-            newMeat.AddElementOfFood(foodElement);
+            meat[CurrentScene].AddElementOfFood(foodElement);
 
             GameObject prefabInstance = Instantiate(prefab, scrollViewContent) as GameObject;
             var myScriptReference = prefabInstance.GetComponent<ScrollViewItem>();

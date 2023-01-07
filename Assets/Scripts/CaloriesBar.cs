@@ -8,36 +8,32 @@ using System.Linq;
 public class CaloriesBar : MonoBehaviour
 {
     public Slider slider;
-    public int x;
     private int max = (int)RegistrationScript.newAccount.index;
 
     public GameObject neededCaloriesTextObject;
     public GameObject currentCaloriesTextObject;
 
     static public MeatClass newMeat;
+    private int allKcalOfMeats;
+
 
     void Start()
     {
+        allKcalOfMeats = 0;
         slider.maxValue = (float)RegistrationScript.newAccount.index;
-        slider.value = (float)RegistrationScript.newAccount.Property;
-
         
         neededCaloriesTextObject.GetComponent<Text>().text = max.ToString();
 
-        if (FoodSystem.newMeat != null)
+        for(int i = 0; i < 3; i++)
         {
-            newMeat = FoodSystem.newMeat;
-            RegistrationScript.newAccount.Property = newMeat.GetTotalKcalOfMeat();
-            currentCaloriesTextObject.GetComponent<Text>().text = RegistrationScript.newAccount.Property.ToString();
-            slider.value = RegistrationScript.newAccount.Property;
-
+            if (FoodSystem.meat[i] != null)
+            {
+                allKcalOfMeats += FoodSystem.meat[i].GetTotalKcalOfMeat();
+            }
         }
-    }
-
-    void Update()
-    {
-        //RegistrationScript.newAccount.Property = x;
-        //slider.value = (float)RegistrationScript.newAccount.Property;
+        RegistrationScript.newAccount.Property = allKcalOfMeats;
+        currentCaloriesTextObject.GetComponent<Text>().text = RegistrationScript.newAccount.Property.ToString();
+        slider.value = RegistrationScript.newAccount.Property;
 
     }
 }

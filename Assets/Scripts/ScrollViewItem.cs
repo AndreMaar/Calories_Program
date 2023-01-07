@@ -9,7 +9,7 @@ public class ScrollViewItem : MonoBehaviour
 
     public void Delete()
     {
-        FoodSystem.newMeat.RemoveElementOfFood(scrollViewItemFood);
+        FoodSystem.meat[FoodSystem.CurrentScene].RemoveElementOfFood(scrollViewItemFood);
         Destroy(this.gameObject);
     }
 
