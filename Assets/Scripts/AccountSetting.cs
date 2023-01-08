@@ -130,5 +130,6 @@ public class AccountSetting : MonoBehaviour
     public void SceneExit()
     {
         AccountObject.Calculation();
+        AccountObject.WriteToFile();
     }
 }

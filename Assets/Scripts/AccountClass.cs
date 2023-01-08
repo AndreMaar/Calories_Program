@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using System.Linq;
 using System.Runtime;
+using System.IO;
 
 
 public class AccountClass
@@ -72,7 +73,6 @@ public class AccountClass
     {
         water = waterValue;
     }
-
     public int GetWater()
     {
         return water;
@@ -101,6 +101,7 @@ public class AccountClass
         set { veight = value; }
         get { return veight; }
     }
+
     public DateTime GetSetDate
     {
         set { birthDate = value; }
@@ -111,6 +112,11 @@ public class AccountClass
     {
         _sex = sex;
     }
+    public Sex GetSex()
+    {
+        return _sex;
+    }
+
     public void SetActivity(Activity activity)
     {
         switch (activity)
@@ -136,9 +142,19 @@ public class AccountClass
     {
         return activity;
     }
-    public Sex GetSex()
+
+    public void WriteToFile()
     {
-        return _sex;
+            File.WriteAllText(Application.streamingAssetsPath + "/AccountLogs/" + "Logs" + ".txt", String.Empty);
+            var finish_logs = new string[6];
+            finish_logs[0] = nickname;
+            finish_logs[1] = Convert.ToString(height);
+            finish_logs[2] = Convert.ToString(veight);
+            finish_logs[3] = Convert.ToString(birthDate);
+            finish_logs[4] = Convert.ToString(_sex);
+            finish_logs[5] = Convert.ToString(activity);
+
+            File.AppendAllLines(Application.streamingAssetsPath + "/AccountLogs/" + "Logs" + ".txt", finish_logs);
     }
 }
 

@@ -272,16 +272,7 @@ public class RegistrationScript : MonoBehaviour
 
         SceneManager.LoadScene(1);
 
-        var finish_logs = new string[6];
-        finish_logs[0] = _nameInput;
-        finish_logs[1] = Convert.ToString(_hightInput);
-        finish_logs[2] = Convert.ToString(_veightInput);
-        finish_logs[3] = Convert.ToString(_dateInput);
-        finish_logs[4] = Convert.ToString(_sex);
-        finish_logs[5] = Convert.ToString(_activity);
+        newAccount.WriteToFile();
 
-        File.AppendAllLines(textDocumentName, finish_logs);
-
-        //SceneManager.LoadScene(1);
     }
 }
