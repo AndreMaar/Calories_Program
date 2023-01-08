@@ -90,8 +90,6 @@ public class RegistrationScript : MonoBehaviour
         }
         else
             ErrorText.gameObject.SetActive(false);
-
-
     }
 
     public void VeightChecker()

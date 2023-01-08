@@ -16,6 +16,6 @@ public class ScrollViewItem : MonoBehaviour
     public void SetText(FoodClass foodElement)
     {
         scrollViewItemFood = foodElement;
-        ParentGameObject.transform.GetChild(1).gameObject.GetComponent<Text>().text = scrollViewItemFood.GetName() + " | " + scrollViewItemFood.GetGrams() + "gr | " + scrollViewItemFood.GetTotalCalories() + "kkal";
+        ParentGameObject.transform.GetChild(1).gameObject.GetComponent<Text>().text = scrollViewItemFood.GetName() + " | " + scrollViewItemFood.GetGrams() + "gr | " + scrollViewItemFood.GetTotalCalories() + "kcal";
     }
 }

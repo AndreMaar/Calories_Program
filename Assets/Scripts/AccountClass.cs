@@ -18,7 +18,7 @@ public class AccountClass
 
         SetActivity(activity);
 
-        index = Calculation();
+        Calculation();
     }
 
     public enum Sex
@@ -46,7 +46,7 @@ public class AccountClass
     private int water;
     private int currentDayCalories;
 
-    private double Calculation()
+    public void Calculation()
     {
         double i;
 
@@ -59,11 +59,12 @@ public class AccountClass
             i = (88.36 + (13.4 * veight) + (4.8 * height) - (5.7 * age)) * activity;
         else
             i = (447.6 + (9.2 * veight) + (3.1 * height) - (4.3 * age)) * activity;
-        return i;
+        index = i;
     }
 
     public void ShowIndex()
     {
+        Calculation();
         Debug.LogFormat("{0} {1} {2} {3} {4} {5} | Index = {6}", nickname, veight, height, age, _sex, activity, index);
     }
 
@@ -87,6 +88,23 @@ public class AccountClass
     {
         set { nickname = value; }
         get { return nickname; }
+    }
+
+    public int GetSetHeight
+    {
+        set { height = value; }
+        get { return height; }
+    }
+
+    public int GetSetVeight
+    {
+        set { veight = value; }
+        get { return veight; }
+    }
+    public DateTime GetSetDate
+    {
+        set { birthDate = value; }
+        get { return birthDate; }
     }
 
     public void SetSex(Sex sex)
