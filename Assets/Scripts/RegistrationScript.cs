@@ -15,7 +15,7 @@ public class RegistrationScript : MonoBehaviour
 {
     private DateTime _dateInput = new DateTime(0001,01,01);
     private int _hightInput = 0;
-    private int _veightInput = 0;
+    private float _veightInput = 0;
     private string _nameInput = "NoName";
     bool CanGoNext = true;
 
@@ -52,7 +52,7 @@ public class RegistrationScript : MonoBehaviour
 
             ActivitySet(lines[5]);
 
-            newAccount = new AccountClass(lines[0], int.Parse(lines[1]), int.Parse(lines[2]), DateTime.Parse(lines[3]), _sex, _activity);
+            newAccount = new AccountClass(lines[0], int.Parse(lines[1]), float.Parse(lines[2]), DateTime.Parse(lines[3]), _sex, _activity);
             newAccount.ShowIndex();
             SceneManager.LoadScene(1);
         }
@@ -94,7 +94,7 @@ public class RegistrationScript : MonoBehaviour
 
     public void VeightChecker()
     {
-        CanGoNext = int.TryParse(VeightInputField.GetComponent<Text>().text, out _veightInput);
+        CanGoNext = float.TryParse(VeightInputField.GetComponent<Text>().text, out _veightInput);
 
         if (_veightInput < 45 || _veightInput > 200){
             CanGoNext = false;

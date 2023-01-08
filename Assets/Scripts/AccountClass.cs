@@ -9,7 +9,7 @@ using System.IO;
 
 public class AccountClass
 {
-    public AccountClass(string nickname, int height, int veight, DateTime birthDate, Sex _sex, Activity activity)
+    public AccountClass(string nickname, int height, float veight, DateTime birthDate, Sex _sex, Activity activity)
     {
         this.nickname = nickname;
         this.height = height;
@@ -40,7 +40,7 @@ public class AccountClass
     private DateTime birthDate;
     private int age;
     private int height;
-    private int veight;
+    private float veight;
     private float activity;
     public double index;
 
@@ -96,9 +96,9 @@ public class AccountClass
         get { return height; }
     }
 
-    public int GetSetVeight
+    public float GetSetVeight
     {
-        set { veight = value; }
+        set { veight = (float)System.Math.Round(value, 2); }
         get { return veight; }
     }
 

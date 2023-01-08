@@ -18,8 +18,8 @@ public class AccountSetting : MonoBehaviour
 
     private string _nameInput = "";
     private DateTime _dateInput = new DateTime(0001, 01, 01);
-    private int _hightInput = 0;
-    private int _veightInput = 0;
+    private int _heightInput = 0;
+    private float _veightInput = 0;
 
     private void Start()
     {
@@ -111,16 +111,16 @@ public class AccountSetting : MonoBehaviour
     }
     public void HeightChanging()
     {
-        bool CanGoNext = int.TryParse(heightText.GetComponent<InputField>().text, out _hightInput);
+        bool CanGoNext = int.TryParse(heightText.GetComponent<InputField>().text, out _heightInput);
 
-        if (CanGoNext && _hightInput > 120 && _hightInput < 220)
+        if (CanGoNext && _heightInput > 120 && _heightInput < 220)
         {
-            AccountObject.GetSetHeight = _hightInput;
+            AccountObject.GetSetHeight = _heightInput;
         }
     }
     public void VeightChanging()
     {
-        bool CanGoNext = int.TryParse(veightText.GetComponent<InputField>().text, out _veightInput);
+        bool CanGoNext = float.TryParse(veightText.GetComponent<InputField>().text, out _veightInput);
 
         if (CanGoNext && _veightInput > 45 && _veightInput < 200)
         {
