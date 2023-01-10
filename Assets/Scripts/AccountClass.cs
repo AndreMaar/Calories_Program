@@ -72,6 +72,7 @@ public class AccountClass
     public void SetWater(int waterValue)
     {
         water = waterValue;
+        DailyLog.WriteDailyLogs();
     }
     public int GetWater()
     {
@@ -80,7 +81,11 @@ public class AccountClass
 
     public int Property
     {
-        set { currentDayCalories = value; }     
+        set
+        {
+            currentDayCalories = value;
+            DailyLog.WriteDailyLogs();
+        }     
         get { return currentDayCalories; }
     }
 
@@ -98,7 +103,11 @@ public class AccountClass
 
     public float GetSetVeight
     {
-        set { veight = (float)System.Math.Round(value, 2); }
+        set
+        {
+            veight = (float)System.Math.Round(value, 2);
+            DailyLog.WriteDailyLogs();
+        }
         get { return veight; }
     }
 
@@ -145,7 +154,6 @@ public class AccountClass
 
     public void WriteToFile()
     {
-            File.WriteAllText(Application.streamingAssetsPath + "/AccountLogs/" + "Logs" + ".txt", String.Empty);
             var finish_logs = new string[6];
             finish_logs[0] = nickname;
             finish_logs[1] = Convert.ToString(height);
@@ -154,7 +162,7 @@ public class AccountClass
             finish_logs[4] = Convert.ToString(_sex);
             finish_logs[5] = Convert.ToString(activity);
 
-            File.AppendAllLines(Application.streamingAssetsPath + "/AccountLogs/" + "Logs" + ".txt", finish_logs);
+            File.WriteAllLines(Application.streamingAssetsPath + "/AccountLogs/" + "Logs" + ".txt", finish_logs);
     }
 }
 

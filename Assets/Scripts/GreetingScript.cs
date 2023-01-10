@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GreetingScript : MonoBehaviour
 {
-    public GameObject greatingTextObject;
+    [SerializeField] private GameObject greatingTextObject;
 
     void Update()
     {

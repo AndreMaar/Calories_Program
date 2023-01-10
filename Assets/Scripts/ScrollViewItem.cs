@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 public class ScrollViewItem : MonoBehaviour
 {
-    public GameObject ParentGameObject;
+    [SerializeField] private GameObject ParentGameObject;
     private FoodClass scrollViewItemFood;
 
     public void Delete()

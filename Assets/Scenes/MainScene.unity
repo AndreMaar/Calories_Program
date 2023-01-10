@@ -1148,6 +1148,7 @@ GameObject:
   - component: {fileID: 508281660}
   - component: {fileID: 508281661}
   - component: {fileID: 508281662}
+  - component: {fileID: 508281663}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1167,7 +1168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ed2d302ac13446868b0c94ceb5a5c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  water: 0
   waterPoints:
   - {fileID: 2023676344}
   - {fileID: 892170830}
@@ -1230,6 +1230,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VeightText: {fileID: 484759264}
+--- !u!114 &508281663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508281657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b277fc2dc9b44a639df2de7008e7dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

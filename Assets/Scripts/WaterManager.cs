@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class WaterManager : MonoBehaviour
 {
-    public int water = 0;
+    private int water = 0;
 
-    public Image[] waterPoints;
-    public Sprite fullWater;
-    public Sprite emptyWater;
+    [SerializeField] private Image[] waterPoints;
+    [SerializeField] private Sprite fullWater;
+    [SerializeField] private Sprite emptyWater;
     
     // Start is called before the first frame update
     void Start()
