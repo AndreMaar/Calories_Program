@@ -7,6 +7,7 @@ public class SceneChanger : MonoBehaviour
 {
     public void ChangeScene(int i)
     {
+        DailyLog.WriteDailyLogs();
         SceneManager.LoadScene(i);
     }
 }
