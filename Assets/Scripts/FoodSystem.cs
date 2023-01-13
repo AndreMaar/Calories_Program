@@ -23,21 +23,21 @@ public class FoodSystem : MonoBehaviour
     static private MeatClass breakfast;
     static private MeatClass lunch;
     static private MeatClass dinner;
-    static public MeatClass[] meat = { breakfast, lunch, dinner};
+    static public MeatClass[] meal = { breakfast, lunch, dinner};
 
     private void Start()
     {
         if(SceneManager.GetActiveScene().buildIndex - 2>=0 && SceneManager.GetActiveScene().buildIndex - 2 <= 2)
             CurrentScene = SceneManager.GetActiveScene().buildIndex - 2;
-        if(meat[CurrentScene] == null)
+        if(meal[CurrentScene] == null)
         {
-            meat[CurrentScene] = new MeatClass();
+            meal[CurrentScene] = new MeatClass();
         }
         else
         {
-            for(int i = 0; i < meat[CurrentScene].GetFoodList().Count;i++)
+            for(int i = 0; i < meal[CurrentScene].GetFoodList().Count;i++)
             {
-                foodElement = meat[CurrentScene].GetFoodList()[i];
+                foodElement = meal[CurrentScene].GetFoodList()[i];
                 
                 GameObject prefabInstance = Instantiate(prefab, scrollViewContent) as GameObject;
                 var myScriptReference = prefabInstance.GetComponent<ScrollViewItem>();
@@ -74,7 +74,7 @@ public class FoodSystem : MonoBehaviour
         {
             foodElement.SetGrams(grams);
 
-            meat[CurrentScene].AddElementOfFood(foodElement);
+            meal[CurrentScene].AddElementOfFood(foodElement);
 
             GameObject prefabInstance = Instantiate(prefab, scrollViewContent) as GameObject;
             var myScriptReference = prefabInstance.GetComponent<ScrollViewItem>();

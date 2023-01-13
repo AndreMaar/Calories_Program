@@ -16,6 +16,7 @@ public class FastVeightChanging : MonoBehaviour
     public void UpdateInfo()
     {
         VeightText.GetComponent<Text>().text = RegistrationScript.newAccount.GetSetVeight.ToString();
+        DailyLog.WriteDailyLogs();
     }
 
     public void PlusVeight()

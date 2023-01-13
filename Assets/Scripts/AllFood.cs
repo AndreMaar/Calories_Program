@@ -6,7 +6,7 @@ public class AllFood : MonoBehaviour
 {
     public static List<FoodClass> foods;
 
-    public void Awake()
+    public static void CreateList()
     {
         foods = new List<FoodClass>();
         foods.Add(new FoodClass("Artichokes", 0.45f));
@@ -197,7 +197,6 @@ public class AllFood : MonoBehaviour
         foods.Add(new FoodClass("Salaka", 0.98f));
         foods.Add(new FoodClass("Sevryuga", 1.37f));
         foods.Add(new FoodClass("Atlantic herring", 0.57f));
-        foods.Add(new FoodClass("Salmon", 2.19f));
         foods.Add(new FoodClass("Whitefish", 1.44f));
         foods.Add(new FoodClass("Mackerel", 1.53f));
         foods.Add(new FoodClass("Catfish", 1.54f));
