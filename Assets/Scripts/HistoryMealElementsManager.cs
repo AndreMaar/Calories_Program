@@ -1,12 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System;
 using UnityEngine.UI;
 
 public class HistoryMealElementsManager : MonoBehaviour
 {
-    public GameObject prefab;
+    [SerializeField] private GameObject prefab;
     [SerializeField] private Transform breakfastScrollViewContent;
     [SerializeField] private Transform lunchScrollViewContent;
     [SerializeField] private Transform dinnerScrollViewContent;

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,7 +13,7 @@ public class FoodSystem : MonoBehaviour
     [SerializeField] private InputField GramsInputField;
 
     [SerializeField] private Transform scrollViewContent;
-    public GameObject prefab;
+    [SerializeField] private GameObject prefab;
 
     private string Input;
     private int grams;
