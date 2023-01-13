@@ -20,7 +20,7 @@ public class HistoryMealElementsManager : MonoBehaviour
             for (int i = 0; i < HistoryManager.historyMeal[numberOfMeal].breakfast.Count; i++)
             {
                 GameObject prefabInstance = Instantiate(prefab, breakfastScrollViewContent);
-                prefabInstance.transform.GetChild(0).gameObject.GetComponent<Text>().text = HistoryManager.historyMeal[numberOfMeal].breakfast[0];
+                prefabInstance.transform.GetChild(0).gameObject.GetComponent<Text>().text = HistoryManager.historyMeal[numberOfMeal].breakfast[i];
             }
         }
         if (HistoryManager.historyMeal[numberOfMeal].lunch != null)
@@ -28,7 +28,7 @@ public class HistoryMealElementsManager : MonoBehaviour
             for (int i = 0; i < HistoryManager.historyMeal[numberOfMeal].lunch.Count; i++)
             {
                 GameObject prefabInstance = Instantiate(prefab, lunchScrollViewContent);
-                prefabInstance.transform.GetChild(0).gameObject.GetComponent<Text>().text = HistoryManager.historyMeal[numberOfMeal].lunch[0];
+                prefabInstance.transform.GetChild(0).gameObject.GetComponent<Text>().text = HistoryManager.historyMeal[numberOfMeal].lunch[i];
             }
         }
         if (HistoryManager.historyMeal[numberOfMeal].dinner != null)
@@ -36,7 +36,7 @@ public class HistoryMealElementsManager : MonoBehaviour
             for (int i = 0; i < HistoryManager.historyMeal[numberOfMeal].dinner.Count; i++)
             {
                 GameObject prefabInstance = Instantiate(prefab, dinnerScrollViewContent);
-                prefabInstance.transform.GetChild(0).gameObject.GetComponent<Text>().text = HistoryManager.historyMeal[numberOfMeal].dinner[0];
+                prefabInstance.transform.GetChild(0).gameObject.GetComponent<Text>().text = HistoryManager.historyMeal[numberOfMeal].dinner[i];
             }
         }
     }

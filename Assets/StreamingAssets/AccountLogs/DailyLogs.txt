@@ -1,5 +1,8 @@
 1/13/2023 12:00:00 AM
-76.7
-3
-592
-Breakfast Tuna 200 592
+76.2
+4
+2157
+Breakfast Bread 33 95.7
+Breakfast Tuna 323 956.08
+Lunch Tuna 323 956.08
+Dinner Egg 231 150.15

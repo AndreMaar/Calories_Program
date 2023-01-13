@@ -1,3 +1,11 @@
+1/09/2023 12:00:00 AM
+76.7
+3
+1176
+Breakfast Tuna 200 592
+Lunch Bread 143 414.7
+Dinner Egg 89 57.85
+Dinner Chocolate 21 113.4
 1/10/2023 12:00:00 AM
 78.4
 0
@@ -14,3 +22,4 @@ Dinner Apple 13 23
 Breakfast Tea 1323 13.23
 Lunch Tuna 22 65.12
 Dinner Salmon 322 466.9
+Dinner Chocolate 21 113.4

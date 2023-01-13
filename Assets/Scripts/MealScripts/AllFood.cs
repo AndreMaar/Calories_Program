@@ -81,6 +81,7 @@ public class AllFood : MonoBehaviour
         foods.Add(new FoodClass("Butter pastry", 3.00f));
         foods.Add(new FoodClass("Gingerbread", 3.30f));
         foods.Add(new FoodClass("Crackers", 3.30f));
+        foods.Add(new FoodClass("Bread", 2.9f));
         foods.Add(new FoodClass("Wheat bread", 2.65f));
         foods.Add(new FoodClass("Rye bread", 2.10f));
         foods.Add(new FoodClass("Yogurt", 0.51f));

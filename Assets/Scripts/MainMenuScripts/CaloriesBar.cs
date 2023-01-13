@@ -12,6 +12,7 @@ public class CaloriesBar : MonoBehaviour
 
     [SerializeField] private GameObject neededCaloriesTextObject;
     [SerializeField] private GameObject currentCaloriesTextObject;
+    [SerializeField] private GameObject caloriesLimitObject;
 
     static public MeatClass newMeat;
     private int allKcalOfMeats;
@@ -36,9 +37,15 @@ public class CaloriesBar : MonoBehaviour
         currentCaloriesTextObject.GetComponent<Text>().text = RegistrationScript.newAccount.Property.ToString();
 
         if (allKcalOfMeats > max)
+        {
             slider.value = max;
+            caloriesLimitObject.gameObject.SetActive(true);
+        }
         else
+        {
+            caloriesLimitObject.gameObject.SetActive(false);
             slider.value = RegistrationScript.newAccount.Property;
+        }
 
     }
 }

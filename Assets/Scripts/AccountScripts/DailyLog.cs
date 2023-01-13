@@ -109,7 +109,8 @@ public class DailyLog : MonoBehaviour
                         i = 2;
                         break;
                 }
-                FoodSystem.meal[i] = new MeatClass();
+                if(FoodSystem.meal[i] == null)
+                    FoodSystem.meal[i] = new MeatClass();
                 foreach (FoodClass food in Food)
                 {
                     if (food.GetName() == words[1])
