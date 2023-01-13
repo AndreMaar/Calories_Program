@@ -23,7 +23,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SettingsScene.unity
     guid: c83fa82338134445b90eb680249e36f1
-  - enabled: 1
-    path: Assets/Scenes/History_Scene.unity
-    guid: c628c91248bfa4c1c9184fd8e895f4a7
   m_configObjects: {}

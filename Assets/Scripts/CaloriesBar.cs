@@ -20,25 +20,20 @@ public class CaloriesBar : MonoBehaviour
     void Start()
     {
         allKcalOfMeats = 0;
-        slider.maxValue = max;
+        slider.maxValue = (float)RegistrationScript.newAccount.index;
         
         neededCaloriesTextObject.GetComponent<Text>().text = max.ToString();
 
         for(int i = 0; i < 3; i++)
         {
-            if (FoodSystem.meal[i] != null)
+            if (FoodSystem.meat[i] != null)
             {
-                allKcalOfMeats += FoodSystem.meal[i].GetTotalKcalOfMeat();
+                allKcalOfMeats += FoodSystem.meat[i].GetTotalKcalOfMeat();
             }
         }
-        
         RegistrationScript.newAccount.Property = allKcalOfMeats;
         currentCaloriesTextObject.GetComponent<Text>().text = RegistrationScript.newAccount.Property.ToString();
-
-        if (allKcalOfMeats > max)
-            slider.value = max;
-        else
-            slider.value = RegistrationScript.newAccount.Property;
+        slider.value = RegistrationScript.newAccount.Property;
 
     }
 }
