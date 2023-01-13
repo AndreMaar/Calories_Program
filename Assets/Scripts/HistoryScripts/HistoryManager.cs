@@ -9,6 +9,7 @@ public class HistoryManager : MonoBehaviour
     string textHistoryDocumentName = Application.streamingAssetsPath + "/AccountLogs/" + "HistoryDailyLogs" + ".txt";
     DateTime date;
     string veight;
+    string waterCups;
     int j = -1;
     string calories;
     HistoryScrollViewItem myScriptReference;
@@ -31,13 +32,14 @@ public class HistoryManager : MonoBehaviour
             if (DateTime.TryParse(lines[i], out date))
             {
                 veight = lines[i + 1];
+                waterCups = lines[i + 2];
                 calories = lines[i + 3];
                 i += 3;
                 j++;
                 
                 GameObject prefabInstance = Instantiate(prefab, scrollViewContent);
                 myScriptReference = prefabInstance.GetComponent<HistoryScrollViewItem>();
-                prefabInstance.transform.GetChild(0).gameObject.GetComponent<Text>().text = date.ToString("MM.dd.yyyy") + " | " + veight + "kg | " + calories + "kcal";
+                prefabInstance.transform.GetChild(0).gameObject.GetComponent<Text>().text = date.ToString("MM.dd.yyyy") + " | " + veight + "kg | " + calories + "kcal |" + veight + "cups";
                 myScriptReference.numberOfScrollViewElement = j;
                 if(int.Parse(calories) == 0)
                     prefabInstance.transform.GetChild(1).gameObject.SetActive(false);

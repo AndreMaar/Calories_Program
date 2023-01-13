@@ -1,3 +1,15 @@
+1/01/2023 12:00:00 AM
+78
+3
+1176
+Breakfast Carrot 74 23
+1/07/2023 12:00:00 AM
+77
+3
+789
+Breakfast Tuna 200 592
+Lunch Egg 65 124
+Lunch Tea 250 2.5
 1/09/2023 12:00:00 AM
 76.7
 3
