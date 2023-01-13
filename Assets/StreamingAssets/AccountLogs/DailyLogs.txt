@@ -1,7 +1,5 @@
-1/12/2023 12:00:00 AM
-78.7
-0
-544
-Breakfast Tea 1323 13.23
-Lunch Tuna 22 65.12
-Dinner Salmon 322 466.9
+1/13/2023 12:00:00 AM
+76.6
+4
+592
+Breakfast Tuna 200 592

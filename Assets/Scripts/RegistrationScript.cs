@@ -40,7 +40,6 @@ public class RegistrationScript : MonoBehaviour
     string textDocumentName = Application.streamingAssetsPath + "/AccountLogs/" + "Logs" + ".txt";
 
     private int _pageNumber = 0;
-    string[] logs = new string [12];
 
     public void Awake()
     {
