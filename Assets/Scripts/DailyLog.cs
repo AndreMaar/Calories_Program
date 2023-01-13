@@ -32,20 +32,17 @@ public class DailyLog : MonoBehaviour
 
             if (Date == DateTime.Today)
             {
-                Debug.Log("Дата збігається");
                 ReadToAccount(line);
                 WriteDailyLogs();
             }
             else
             {
-                Debug.Log("Дата не збігається");
                 WriteHistoryLogs(line);
                 WriteDailyLogs();
             }
         }
         else
         {
-            Debug.Log("Файлу не існує");
             WriteDailyLogs();
         }
     }

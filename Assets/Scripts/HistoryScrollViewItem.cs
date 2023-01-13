@@ -4,15 +4,18 @@ using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 public class HistoryScrollViewItem : MonoBehaviour
 {
     [SerializeField] private GameObject ParentGameObject;
+    public int numberOfScrollViewElement;
 
-
-
-    public void SetText(DateTime date)
+    public void ShowNumber()
     {
-        ParentGameObject.transform.GetChild(1).gameObject.GetComponent<Text>().text = "";
+        HistoryMealElementsManager.CreateElementsOfFood(numberOfScrollViewElement);
+        SceneManager.LoadScene(7);
     }
 }
+
+

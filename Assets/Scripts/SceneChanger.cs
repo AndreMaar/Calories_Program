@@ -9,5 +9,11 @@ public class SceneChanger : MonoBehaviour
     {
         DailyLog.WriteDailyLogs();
         SceneManager.LoadScene(i);
+        if(SceneManager.GetActiveScene().buildIndex == 7) {
+            for (int j = 0; j<HistoryManager.historyMeal.Count; j++)
+            {
+                HistoryManager.historyMeal[j].ClearAllLists();
+            }
+        }
     }
 }
