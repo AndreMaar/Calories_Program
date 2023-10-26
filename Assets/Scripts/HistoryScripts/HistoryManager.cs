@@ -38,8 +38,9 @@ public class HistoryManager : MonoBehaviour
                 j++;
                 
                 GameObject prefabInstance = Instantiate(prefab, scrollViewContent);
+                prefabInstance.transform.SetAsFirstSibling();
                 myScriptReference = prefabInstance.GetComponent<HistoryScrollViewItem>();
-                prefabInstance.transform.GetChild(0).gameObject.GetComponent<Text>().text = date.ToString("MM.dd.yyyy") + " | " + veight + "kg | " + calories + "kcal |" + veight + "cups";
+                prefabInstance.transform.GetChild(0).gameObject.GetComponent<Text>().text = date.ToString("MM.dd.yyyy") + " | " + veight + "kg | " + calories + "kcal |" + waterCups + "cups";
                 myScriptReference.numberOfScrollViewElement = j;
                 if(int.Parse(calories) == 0)
                     prefabInstance.transform.GetChild(1).gameObject.SetActive(false);

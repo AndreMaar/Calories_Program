@@ -35,3 +35,24 @@ Breakfast Tea 1323 13.23
 Lunch Tuna 22 65.12
 Dinner Salmon 322 466.9
 Dinner Chocolate 21 113.4
+1/13/2023 12:00:00 AM
+76.4
+2
+1273
+Breakfast Tuna 300 888
+Lunch Tea 250 2.5
+Dinner Walnuts 25 162.5
+Dinner Salmon 122 176.9
+Dinner Peache 100 45
+1/14/2023 12:00:00 AM
+70
+0
+338
+Breakfast Apple 100 45
+Breakfast Tuna 50 148
+Lunch Salmon 100 145
+10/4/2023 12:00:00 AM
+73.1
+5
+45
+Breakfast Apple 100 45
